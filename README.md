@@ -1,6 +1,6 @@
 # AlphaBridge
 
-这是一个给 alphaXiv 用的本地浏览器插件（0.5.0），点开论文就能切到带公式和图表的双语阅读页，边读边用模型问论文，还能把划词批注存进 Obsidian。代码仓库在 https://github.com/Zhambur/AlphaBridge 。
+这是一个给 alphaXiv 用的本地浏览器插件（0.5.1），点开论文就能切到带公式和图表的双语阅读页，边读边用模型问论文，还能把划词批注存进 Obsidian。代码仓库在 https://github.com/Zhambur/AlphaBridge 。
 
 ## 安装
 

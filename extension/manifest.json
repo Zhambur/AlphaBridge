@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AlphaBridge · 双语阅读与 Obsidian 批注",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "在 alphaXiv 打开保留图表和公式的逐句双语原文，划词批注保存到 Obsidian。",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsYFOqGnIzDG/nV3MyMULPlf48bzSzYMM6Sm7DbW0/Dmx5MRNPt9NcX8p9nVwi7AwbhvkDto0RjgcVt310wPuYBGUirD4njWVZsAepC31dveYVGkPszKYmrjp0hAq8zWUzsYa6gnqYcoLZ6kW7TY3hM3HD09Wn7xvJYXkFeTqDyTAySul8AJhof+iY41AJt++1eu/xgjKuljp2NyJRHmF37HtPyuX7trMOMsYU8+IuSLb2vQ9830DqMsNQ4PtO14Im/jd0DyWrQmXvF3DncUwOJZbm9doymYIg2GtJUIUoYOm6MxQtQ5GD234c5JMQePqqBvRp+Gxb86l/KDsG/A1AQIDAQAB",
   "permissions": [

@@ -4,7 +4,8 @@
 <label>接口地址<input name="url" type="url" placeholder="https://你的服务地址/v1"></label>
 <label>模型名称<input name="model" placeholder="填写服务提供的模型名"></label>
 <label>API key<input name="key" type="password" autocomplete="off" placeholder="未配置"></label><p class="hint">密钥仅保存在当前浏览器扩展存储中，不写入网页和 Obsidian。留空保持原密钥。</p>
-<label>目标语言<input name="language" value="简体中文"></label>
+<label>目标语言<select name="language" id="language"><option value="简体中文">简体中文</option><option value="繁體中文">繁體中文</option><option value="English">English（英语）</option><option value="日本語">日本語（日语）</option><option value="한국어">한국어（韩语）</option><option value="Français">Français（法语）</option><option value="Deutsch">Deutsch（德语）</option><option value="Español">Español（西班牙语）</option><option value="Português">Português（葡萄牙语）</option><option value="Русский">Русский（俄语）</option><option value="العربية">العربية（阿拉伯语）</option><option value="__custom__">自定义…</option></select></label>
+<label id="custom-language-label" hidden>自定义目标语言<input id="custom-language" maxlength="100" placeholder="例如：意大利语"></label>
 <label class="check"><input name="autoTranslate" type="checkbox" checked> 打开双语原文后自动翻译（仅在已配置服务时）</label>
 <label class="check"><input name="pdfFigures" type="checkbox" checked> 自动用 PDF 原图替换定位明确的图（本机下载、缓存和渲染；不发送给模型）</label>
 <button type="submit">保存设置并授权接口</button><button id="clear-key" type="button">清除密钥</button><p id="status" role="status"></p></form>
