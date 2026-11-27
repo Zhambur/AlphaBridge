@@ -1,0 +1,13 @@
+{
+  "name": "alphabridge",
+  "version": "0.5.0",
+  "private": true,
+  "scripts": {
+    "test": "node tests/standalone.cjs && node tests/host-annotation.cjs",
+    "package": "node scripts/package.cjs"
+  },
+  "devDependencies": {
+    "fflate": "0.8.3",
+    "playwright": "1.58.2"
+  }
+}

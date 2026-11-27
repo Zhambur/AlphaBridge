@@ -1,0 +1,18 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AlphaBridge 双语原文</title><link rel="stylesheet" href="vendor/arxiv.css"><link rel="stylesheet" href="reader.css"><link rel="icon" type="image/png" href="icons/icon-32.png"></head><body>
+<header id="toolbar"><button id="close">← alphaXiv</button><strong>AlphaBridge <small>双语原文</small></strong><div class="grow"></div><button id="translate">翻译全文</button><button id="toggle">隐藏译文</button><button id="notes-toggle">批注 <span id="note-count">0</span></button><button id="chat-toggle" aria-expanded="false" aria-controls="chat-drawer">问 AI</button><button id="settings">设置</button></header>
+<div id="notice" role="status">正在载入结构化原文…</div><div id="meta"></div><div id="media-status" role="status" hidden></div>
+<main id="paper" class="ltx_page_main"><div class="ltx_page_content" id="document"></div></main>
+<button id="annotate-selection" type="button" hidden>批注</button>
+<aside id="notes" aria-label="论文批注" hidden><header class="chat-head"><strong>论文批注</strong><button id="notes-ai" type="button">问 AI</button><button id="notes-close" type="button">收起 →</button></header><div class="notes-body">
+<section id="annotation" hidden><blockquote id="selected"></blockquote><label for="thought">你的批注</label><textarea id="thought" placeholder="写下你的批注（可留空）" rows="6"></textarea><div id="save-status" role="status"></div><button id="save">保存到 Obsidian</button><button id="cancel">收起编辑</button><button id="discard-draft" type="button">丢弃草稿</button><a id="open-note" hidden>打开笔记 ↗</a></section>
+<h2>摘录与草稿 <span id="draft-status"></span></h2><p class="subtle">输入自动保留为本地草稿；点击保存后写入 Obsidian。</p><div id="note-list"></div></div></aside>
+<aside id="chat-drawer" aria-label="论文对话" hidden>
+<header class="chat-head"><strong>与论文对话</strong><button id="chat-new" type="button">新对话</button><button id="chat-close" type="button" aria-label="收起对话">收起 →</button></header>
+<p id="chat-context" class="chat-hint">正在识别论文编号…</p>
+<div id="chat-messages" role="log" aria-live="polite"><p class="chat-empty">可以直接提问，也可以先在正文中划词。当前选区会自动带入下方引用。</p></div>
+<form id="chat-form"><div id="chat-quote-box" hidden><div class="chat-quote-label">当前引用 <button id="chat-unquote" type="button">移除</button></div><blockquote id="chat-quote"></blockquote></div>
+<label for="chat-question">你的问题</label><textarea id="chat-question" rows="3" maxlength="16000" placeholder="这段话与文章的方法有什么关系？"></textarea>
+<div id="chat-status" role="status"></div><button id="chat-send" type="submit" disabled>发送</button><span class="chat-hint">Ctrl / ⌘ + Enter 发送</span>
+<p class="chat-hint">使用设置中的模型。先发送 arXiv 编号、引用及对话，AI 调用工具按需读取。接口须支持工具调用；不发送图片像素。对话暂保留在此阅读页。</p></form>
+</aside>
+<script src="vendor/purify.min.js"></script><script src="common.js"></script><script src="document.js"></script><script src="arxiv-reader.js"></script><script src="vendor/marked.umd.js"></script><script src="chat-markdown.js"></script><script src="chat.js"></script><script src="figures.js"></script><script src="reader.js"></script></body></html>

@@ -1,0 +1,19 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>AlphaBridge 设置</title><link rel="stylesheet" href="options.css"><link rel="icon" type="image/png" href="icons/icon-32.png"></head><body><main>
+<h1>AlphaBridge</h1><p>在 alphaXiv 阅读，正文逐句对照，划词写批注。</p>
+<form id="form"><h2>翻译与对话服务</h2><p class="hint">使用兼容 Chat Completions 的接口。翻译时发送正文句子；对话时先发送 arXiv 编号、当前引用和历史，再由模型调用工具按需读取原文。问答需要接口支持 tools / tool_choice；费用取决于你配置的服务。未配置时仍可阅读和批注。</p>
+<label>接口地址<input name="url" type="url" placeholder="https://你的服务地址/v1"></label>
+<label>模型名称<input name="model" placeholder="填写服务提供的模型名"></label>
+<label>API key<input name="key" type="password" autocomplete="off" placeholder="未配置"></label><p class="hint">密钥仅保存在当前浏览器扩展存储中，不写入网页和 Obsidian。留空保持原密钥。</p>
+<label>目标语言<input name="language" value="简体中文"></label>
+<label class="check"><input name="autoTranslate" type="checkbox" checked> 打开双语原文后自动翻译（仅在已配置服务时）</label>
+<label class="check"><input name="pdfFigures" type="checkbox" checked> 自动用 PDF 原图替换定位明确的图（本机下载、缓存和渲染；不发送给模型）</label>
+<button type="submit">保存设置并授权接口</button><button id="clear-key" type="button">清除密钥</button><p id="status" role="status"></p></form>
+<section><h2>Obsidian</h2><p>选择仓库根目录，插件会直接写入 Markdown，无需安装本机桥接。</p>
+<label>仓库路径提示（仅本机保存）<input name="vaultHint" form="form" placeholder="可留空；填路径不会代替浏览器授权"></label>
+<label>Obsidian 仓库名称（用于打开笔记）<input name="vaultName" form="form" placeholder="留空使用选中的目录名"></label>
+<label>笔记子目录<input name="noteFolder" form="form" placeholder="留空写入仓库根目录，例如 Reading/Papers"></label>
+<button id="choose-vault" type="button">选择仓库并授权</button><button id="authorize-vault" type="button">重新授权</button><button id="forget-vault" type="button">断开目录</button><p id="vault-status" role="status"></p>
+<p class="hint">浏览器不会允许插件按输入的路径自动获得权限。首次使用须选择一次含 .obsidian 的目录；权限失效时重新授权。子目录和名称修改后点击上方“保存设置”。</p></section>
+<section><h2>PDF 缓存</h2><p>PDF 在插件内下载、渲染和裁剪，无需 Python。最多缓存六篇 PDF。</p><button id="clear-pdf-cache" type="button">清理 PDF 缓存</button><p id="cache-status" role="status"></p></section>
+<section><h2>阅读方式</h2><p>在 alphaXiv 论文页面点右下角“双语原文”。使用 arXiv / ar5iv 的 HTML 原文保留图表、MathML 公式和引用，英文每句下方显示译文。HTML 会重新排版，与 PDF 页码不一一对应。</p><p>正文、摘要和图注支持逐句翻译；图中和表格单元格里的文字、参考文献保留原文。没有 HTML 的论文继续在 alphaXiv 阅读 PDF，选中文字后仍可写批注。</p><p>选中文字后就地输入想法，点“保存到 Obsidian”。保存失败时草稿保留，可从阅读页“批注”中重试。网页更新可能影响插件入口；不会修改云端收藏。</p></section>
+</main><script src="common.js"></script><script src="vault.js"></script><script src="options.js"></script></body></html>

@@ -1,0 +1,24 @@
+work/
+__pycache__/
+native/__pycache__/
+native/cache/
+native/host.cmd
+native/org.alphabridge.obsidian.json
+
+# Local settings and task history
+native/config.json
+TASK.md
+.env
+.env.*
+*.log
+
+
+extension/local-defaults.json
+node_modules/
+.playwright-mcp/
+native/
+Install-Obsidian-Bridge.cmd
+Install-Obsidian-Bridge.ps1
+tests/test_native.py
+tests/test_pdf_figures.py
+tests/browser.cjs

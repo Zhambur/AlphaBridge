@@ -1,0 +1,62 @@
+:root{color-scheme:light!important;--background-color:#f7f8f5!important;--text-color:#25332d!important}
+html,body{margin:0!important;background:#f7f8f5!important;color:#25332d!important;scroll-padding-top:100px;display:block!important;width:100%!important;height:auto!important;min-height:100vh}
+#toolbar{position:sticky;top:0;z-index:1000;display:flex;align-items:center;gap:10px;background:#fffefbec;border-bottom:1px solid #dde3dc;padding:12px 22px;font:14px system-ui;backdrop-filter:blur(12px)}
+#toolbar strong{font-size:16px;white-space:nowrap}#toolbar small{font-size:12px;color:#718076;font-weight:normal}.grow{flex:1}
+button{font:13px system-ui;border:1px solid #d1ddd5;border-radius:7px;padding:8px 12px;background:#fff;color:#285f4e;cursor:pointer}button:hover{background:#eff5ef}button:disabled{opacity:.55;cursor:default}
+#notice,#meta{max-width:1000px;margin:14px auto;padding:8px 24px;font:13px/1.6 system-ui;color:#5c6d63}#notice.error{color:#8a3d2c;background:#fff0e8;border-radius:8px}#meta{font-size:12px;margin-top:0;padding-top:0;color:#7d8980}
+#media-status{position:sticky;top:59px;z-index:999;background:#fff0e8;color:#8a3d2c;padding:8px 24px;font:13px/1.6 system-ui;border-bottom:1px solid #eac8b9}.ab-media-failure,.ab-unsupported-media{display:block;border:1px dashed #cba89c;padding:14px;color:#8a3d2c;font:14px/1.6 system-ui}
+#paper.ltx_page_main{display:block!important;margin:0 auto!important;max-width:1120px!important;min-width:0!important;padding:0 24px 100px!important;width:auto!important}
+#document.ltx_page_content{margin:0!important;padding:0!important;max-width:none!important}
+#document article{background:#fffefb;padding:50px 68px;border:1px solid #e0e5dd;border-radius:8px;font-size:17px;line-height:1.7;max-width:none!important;margin:0!important;overflow-wrap:break-word}
+#document .ltx_p{text-align:left!important}#document img{max-width:100%;height:auto}#document figure{overflow:auto}#document .ltx_equation,#document .ltx_equationgroup{overflow-x:auto}#document table{max-width:100%}
+@layer ar5iv{#document table.ab-native-table td,#document table.ab-native-table th{padding-left:.3em!important;padding-right:.3em!important}}
+#document .ltx_note{position:relative;cursor:help}#document .ltx_note_outer{display:none!important}#document .ltx_note:hover>.ltx_note_outer,#document .ltx_note:focus-within>.ltx_note_outer{display:block!important;position:absolute;top:1em;left:0;z-index:20;width:min(500px,65vw);padding:15px;background:#fff;border:1px solid #dce3d7;box-shadow:0 6px 24px #0002;text-align:left;font:14px/1.6 system-ui}
+.pb-sentence{display:block;margin-bottom:.6em}.pb-source{display:block}.pb-translation{display:block;color:#316653;font:16px/1.8 system-ui,"Microsoft YaHei",sans-serif;margin-top:.22em}.original-only .pb-translation{display:none!important}.original-only .pb-sentence,.original-only .pb-source{display:inline}.original-only .pb-sentence:after{content:' '}
+.pb-translation math{font-size:1em}.ltx_bibliography{font-size:.9em}a{color:#2d6652}::highlight(ab-notes){background:#f9df8a;color:inherit}
+#annotation{position:fixed;z-index:2000;width:350px;padding:16px;background:#fff;border:1px solid #d4dfd7;border-radius:10px;box-shadow:0 12px 50px #0003;font:14px/1.6 system-ui}
+#annotation blockquote{margin:0;color:#5b6c61;max-height:110px;overflow:auto;font-size:13px;white-space:pre-wrap}#thought{display:block;box-sizing:border-box;width:100%;padding:10px;margin:12px 0;border:1px solid #ccd8d0;border-radius:6px;font:14px/1.6 system-ui;resize:vertical}#save{background:#285f4e;color:white}#save-status{font-size:12px;margin-bottom:8px}
+#notes{position:fixed;right:12px;top:72px;bottom:12px;width:340px;z-index:1100;background:#fff;padding:20px;overflow:auto;box-shadow:0 8px 40px #0002;border:1px solid #d5dfd7;border-radius:10px;font:14px/1.7 system-ui}#notes h2{font:600 18px system-ui}.subtle{font-size:12px;color:#7d8980}.saved-note{padding:15px 0;border-bottom:1px solid #e5e9e2}.saved-note blockquote{font-size:13px;margin:0;border-left:3px solid #d4b64c;padding-left:10px}.saved-note button{margin-left:6px}#open-note{display:inline-block;margin:8px}
+[hidden]{display:none!important}@media(max-width:760px){#toolbar{gap:4px;padding:8px}#toolbar small,#toggle{display:none}#toolbar button{padding:8px;font-size:12px}#paper.ltx_page_main{padding:0 8px 70px!important}#document article{padding:24px 18px;font-size:16px}}
+/* The chat drawer reserves reading space on desktop and overlays on small screens. */
+#chat-drawer{position:fixed;right:0;top:59px;bottom:0;width:420px;max-width:100vw;z-index:1200;background:#fffefb;border-left:1px solid #d5dfd7;box-shadow:-8px 0 30px #25332d12;display:flex;flex-direction:column;font:14px/1.6 system-ui;animation:chat-enter .18s ease-out}
+@keyframes chat-enter{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.chat-head{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid #e5e9e2}.chat-head strong{flex:1}.chat-head button{padding:6px 10px}
+.chat-hint{font:12px/1.6 system-ui;color:#69796f}#chat-context{margin:10px 18px}
+#chat-messages{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:0 18px 14px}.chat-empty{color:#69796f;padding:22px 0}
+.chat-message{margin:14px 0;padding:13px;border-radius:9px;background:#f2f6f2;overflow-wrap:anywhere}.chat-message.assistant{background:#fff;border:1px solid #e0e6df}.chat-message>strong{font-size:12px;color:#607368}.chat-answer{white-space:pre-wrap;margin-top:7px}.chat-message blockquote{margin:8px 0;padding-left:10px;border-left:3px solid #b5cbbb;white-space:pre-wrap;font-size:12px}
+#chat-form{padding:14px 18px;border-top:1px solid #dce3dc;max-height:55%;overflow:auto}#chat-form label{font-size:13px}#chat-question{box-sizing:border-box;width:100%;margin:6px 0;padding:10px;border:1px solid #bacfc0;border-radius:7px;resize:vertical;min-height:70px;max-height:180px;font:14px/1.6 system-ui}#chat-question:focus{outline:2px solid #aec9ba}
+#chat-quote-box{background:#f0f5ef;border-radius:7px;padding:8px 10px;margin-bottom:9px}.chat-quote-label{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#5c7465}.chat-quote-label button{padding:2px 7px;font-size:12px}#chat-quote{margin:4px 0;max-height:110px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}
+#chat-status{font-size:12px;color:#8a5336;margin:5px 0;white-space:pre-wrap}#chat-send{background:#285f4e;color:#fff;margin-right:10px}
+@media(min-width:1100px){body.chat-open{padding-right:420px;box-sizing:border-box}body.chat-open #toolbar{margin-right:-420px}body.chat-open #paper.ltx_page_main{max-width:1120px!important}body.chat-open #document article{padding:38px 36px}}
+@media(prefers-reduced-motion:reduce){#chat-drawer{animation:none}}
+
+.ab-figure-tools{margin:8px 0 22px;padding:8px 12px;border-left:3px solid #d2b16b;background:#fcf8ee;font:12px/1.6 system-ui;color:#695e45}.ab-figure-tools a{margin-left:10px;white-space:nowrap}
+/* PDF artwork and local crop editor. Captions retain the reader's typography. */
+#document .ab-pdf-image{display:block;width:100%;max-width:100%;height:auto;cursor:zoom-in;margin:10px auto 18px;background:white}#document .ab-html-artwork[hidden]{display:none!important}
+.ab-figure-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px}.ab-figure-tools>span{flex:1;min-width:160px}.ab-figure-tools button{padding:5px 9px;font-size:12px}.ab-figure-tools a{margin:0}
+.ab-pdf-dialog{box-sizing:border-box;width:min(1100px,96vw);height:94vh;max-width:96vw;max-height:94vh;padding:0;border:1px solid #c8d5cc;border-radius:12px;background:#fffefb;color:#263d30;font:14px/1.5 system-ui;z-index:5000}.ab-pdf-dialog[open]{display:flex;flex-direction:column}.ab-pdf-dialog::backdrop{background:#1b2b26aa}.ab-pdf-dialog header,.ab-pdf-dialog footer{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid #dae2da;flex-shrink:0}.ab-pdf-dialog header strong{flex:1}.ab-pdf-dialog footer{border-top:1px solid #dae2da;border-bottom:0;flex-wrap:wrap}.ab-pdf-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 18px}.ab-pdf-dialog input{width:65px;padding:5px;border:1px solid #b9cbbb;border-radius:5px;font:13px system-ui}.ab-pdf-dialog p{margin:0;padding:0 18px 10px;font-size:12px;color:#66766a}
+#pdf-stage-scroll{flex:1;min-height:0;overflow:auto;background:#e9eeea;padding:16px;overscroll-behavior:contain}#pdf-stage{position:relative;max-width:820px;margin:auto;line-height:0;cursor:crosshair;touch-action:none;user-select:none}#pdf-page-image{width:100%;height:auto;display:block;pointer-events:none}#pdf-selection{position:absolute;border:2px solid #217a58;background:#36a87825;box-sizing:border-box;pointer-events:none;box-shadow:0 0 0 1px white inset}.ab-pdf-bounds{display:flex;gap:9px;flex-wrap:wrap}.ab-pdf-bounds label{font-size:12px}#pdf-crop-status{flex:1;min-width:150px;font-size:12px;color:#677868}#pdf-apply{background:#285f4e;color:white}
+.ab-pdf-zoom{width:96vw}.ab-pdf-zoom header{justify-content:flex-end}.ab-zoom-body{overflow:auto;flex:1;min-height:0;padding:20px;background:#edf1ed}.ab-zoom-body img{display:block;max-width:100%;height:auto;margin:auto;background:white}.ab-pdf-zoom.natural img{max-width:none}
+
+/* Scoped Markdown styles keep article typography out of the chat drawer. */
+.chat-answer.chat-markdown{white-space:normal;line-height:1.7;min-width:0}
+.chat-markdown>:first-child{margin-top:0}.chat-markdown>:last-child{margin-bottom:0}
+.chat-markdown p{margin:.65em 0}.chat-markdown :is(h1,h2,h3,h4,h5,h6){font-family:inherit;font-weight:650;line-height:1.4;margin:1em 0 .5em;color:inherit}
+.chat-markdown h1{font-size:1.35em}.chat-markdown h2{font-size:1.2em}.chat-markdown :is(h3,h4,h5,h6){font-size:1.05em}
+.chat-markdown :is(ul,ol){padding-left:1.6em;margin:.6em 0;list-style-position:outside}.chat-markdown ul{list-style-type:disc}.chat-markdown ol{list-style-type:decimal}.chat-markdown li{margin:.25em 0}
+.chat-markdown strong{font-size:inherit;color:inherit;font-weight:700}.chat-markdown blockquote{white-space:normal;font-size:inherit;color:#607368;margin:.7em 0}
+.chat-markdown code{font: .9em/1.6 Consolas,monospace;background:#edf2ef;padding:.12em .3em;border-radius:4px;white-space:break-spaces}
+.chat-markdown pre{max-width:100%;overflow-x:auto;background:#f1f4f2;padding:12px;border-radius:6px;margin:.75em 0;white-space:pre;overflow-wrap:normal}
+.chat-markdown pre code{white-space:pre;background:none;padding:0;border-radius:0}
+.chat-markdown .chat-table-scroll{max-width:100%;overflow-x:auto;margin:.75em 0}.chat-markdown table{border-collapse:collapse;font-size:13px;width:max-content;min-width:100%;margin:0}
+.chat-markdown :is(th,td){border:1px solid #d5dfd7;padding:6px 9px;text-align:left;max-width:260px;overflow-wrap:anywhere}.chat-markdown th{background:#edf3ee;font-weight:600}
+.chat-markdown hr{border:0;border-top:1px solid #d5dfd7;margin:1em 0}.chat-markdown a{text-decoration:underline}
+
+#annotate-selection{position:fixed;z-index:1500;padding:5px 12px;background:#285f4e;color:white;box-shadow:0 3px 12px #0002;font-size:13px}
+#notes{right:0;top:59px;bottom:0;width:420px;max-width:100vw;box-sizing:border-box;padding:0;border-radius:0;display:flex;flex-direction:column;z-index:1200}
+#notes .notes-body{padding:16px 18px;overflow:auto;min-height:0;flex:1}#notes .chat-head{flex-shrink:0}#notes h2{font-size:15px}
+#annotation{position:static;width:auto;padding:0 0 18px;border:0;border-bottom:1px solid #d5dfd7;border-radius:0;box-shadow:none;background:transparent}
+#annotation blockquote{max-height:160px;overflow:auto;border-left:3px solid #b5cbbb;padding-left:10px;margin-bottom:16px}#thought{min-height:140px}#draft-status{font-size:12px;color:#8a5336}
+@media(min-width:1100px){body.notes-open{padding-right:420px;box-sizing:border-box}body.notes-open #toolbar{margin-right:-420px}body.notes-open #document article{padding:38px 36px}}
+
+#document .ab-text-callout{display:block;box-sizing:border-box;max-width:100%;margin:18px 0;padding:16px 20px;border:1px solid #cfddd3;border-left:4px solid #497e65;border-radius:8px;background:#eef5ef;color:#25332d;white-space:normal;overflow-wrap:anywhere;font-size:1em;line-height:1.7}#document .ab-text-callout .ltx_p{display:block;margin:0}#document .ab-text-callout .pb-sentence:last-child{margin-bottom:0}

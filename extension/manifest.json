@@ -1,0 +1,79 @@
+{
+  "manifest_version": 3,
+  "name": "AlphaBridge · 双语阅读与 Obsidian 批注",
+  "version": "0.5.0",
+  "description": "在 alphaXiv 打开保留图表和公式的逐句双语原文，划词批注保存到 Obsidian。",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsYFOqGnIzDG/nV3MyMULPlf48bzSzYMM6Sm7DbW0/Dmx5MRNPt9NcX8p9nVwi7AwbhvkDto0RjgcVt310wPuYBGUirD4njWVZsAepC31dveYVGkPszKYmrjp0hAq8zWUzsYa6gnqYcoLZ6kW7TY3hM3HD09Wn7xvJYXkFeTqDyTAySul8AJhof+iY41AJt++1eu/xgjKuljp2NyJRHmF37HtPyuX7trMOMsYU8+IuSLb2vQ9830DqMsNQ4PtO14Im/jd0DyWrQmXvF3DncUwOJZbm9doymYIg2GtJUIUoYOm6MxQtQ5GD234c5JMQePqqBvRp+Gxb86l/KDsG/A1AQIDAQAB",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "offscreen",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
+    "https://arxiv.org/*",
+    "https://ar5iv.labs.arxiv.org/*",
+    "https://ar5iv.org/*"
+  ],
+  "optional_host_permissions": [
+    "https://*/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "打开 AlphaBridge 双语原文",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.alphaxiv.org/*",
+        "https://alphaxiv.org/*"
+      ],
+      "js": [
+        "common.js",
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "reader.html",
+        "reader.css",
+        "reader.js",
+        "figures.js",
+        "chat.js",
+        "arxiv-reader.js",
+        "document.js",
+        "common.js",
+        "vendor/*"
+      ],
+      "matches": [
+        "https://www.alphaxiv.org/*",
+        "https://alphaxiv.org/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://arxiv.org https://ar5iv.labs.arxiv.org https://ar5iv.org; font-src 'self' data:; connect-src 'self' https: http://localhost:* http://127.0.0.1:*; base-uri 'none';"
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "minimum_chrome_version": "116"
+}
